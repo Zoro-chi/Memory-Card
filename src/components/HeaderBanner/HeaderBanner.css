@@ -1,0 +1,8 @@
+.banner {
+  width: 100vw;
+  height: 35vh;
+}
+.banner img {
+  width: inherit;
+  height: inherit;
+}
