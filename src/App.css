@@ -4,5 +4,8 @@
   box-sizing: border-box;
 }
 body {
-  background-color: skyblue;
+  background-color: rgb(230, 187, 132);
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
 }

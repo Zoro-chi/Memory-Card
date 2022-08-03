@@ -1,0 +1,14 @@
+.body {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+.bodyContainer {
+  width: 90vw;
+  display: grid;
+  height: 90vh;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  border: 1px solid black;
+  grid-gap: 0.3rem;
+}
