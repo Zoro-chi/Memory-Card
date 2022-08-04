@@ -11,7 +11,7 @@ import oden from "./images/oden.jpg";
 import sanji from "./images/sanji.jpg";
 import ulti from "./images/ulti.jpg";
 
-const chars = [
+const list = [
   {
     name: "Luffy",
     img: luffy,
@@ -62,4 +62,4 @@ const chars = [
   },
 ];
 
-export default chars;
+export default list;

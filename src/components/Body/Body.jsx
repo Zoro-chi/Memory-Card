@@ -1,13 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./Body.css";
-import chars from "../../chars.js";
+import Score from "../Score/Score.jsx";
+import CardContainer from "../Card/CardContainer";
+import list from "../../list.js";
+import shuffle from "../../utils/utils.js";
 
 function Body(props) {
-    
+  const [currentScore, setCurrentScore] = useState(0);
+  const [highScore, setHighScore] = useState(0);
+  const [chars, setChars] = useState(list);
+  const [clickedBounty, setClickedBounty] = useState([]);
+
+  const reset = () => {
+    setCurrentScore(0);
+    setHighScore(0);
+    setClickedBounty([]);
+  };
+
+  const play = (charName) => {
+    if (clickedBounty.includes(charName)) {
+      reset();
+    } else {
+      const score = currentScore + 1;
+      setCurrentScore(score);
+      if (score > highScore) {
+        setHighScore(currentScore);
+        setClickedBounty([...clickedBounty, charName]);
+      }
+    }
+  };
+
+  const handleClick = (e) => {
+    const char = e.target.parentNode.lastChild.textContent;
+    play(char);
+    setChars(shuffle(chars));
+  };
+
   return (
-    <div className="body">
-      <div className="bodyContainer"></div>
+    <div>
+      <Score currentScore={currentScore} highScore={highScore} />
+      <CardContainer chars={chars} handleClick={handleClick} />
     </div>
   );
 }
