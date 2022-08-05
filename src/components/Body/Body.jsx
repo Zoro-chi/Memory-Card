@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import "./Body.css";
 import Score from "../Score/Score.jsx";
@@ -11,6 +11,10 @@ function Body(props) {
   const [highScore, setHighScore] = useState(0);
   const [chars, setChars] = useState(list);
   const [clickedBounty, setClickedBounty] = useState([]);
+
+  useEffect(() => {
+    setChars(shuffle(chars));
+  }, []);
 
   const reset = () => {
     setCurrentScore(0);
@@ -25,7 +29,7 @@ function Body(props) {
       const score = currentScore + 1;
       setCurrentScore(score);
       if (score > highScore) {
-        setHighScore(currentScore);
+        setHighScore(score);
         setClickedBounty([...clickedBounty, charName]);
       }
     }
@@ -38,7 +42,7 @@ function Body(props) {
   };
 
   return (
-    <div>
+    <div className="body">
       <Score currentScore={currentScore} highScore={highScore} />
       <CardContainer chars={chars} handleClick={handleClick} />
     </div>

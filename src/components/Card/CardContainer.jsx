@@ -1,5 +1,6 @@
 import React from "react";
 
+import "./CardContainer.css";
 import Bounty from "./Bounty";
 
 function CardContainer(props) {

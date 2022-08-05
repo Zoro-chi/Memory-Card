@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./Bounty.css"
+
 function Bounty(props) {
   const { char, handleClick } = props;
 

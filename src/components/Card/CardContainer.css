@@ -1,0 +1,28 @@
+.cardContainer {
+  width: 90vw;
+  display: grid;
+  height: 90vh;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 0.3rem;
+  margin-top: 1rem;
+}
+.cardContainer div {
+  width: fit-content;
+}
+.cardContainer img {
+  height: 170px;
+  cursor: crosshair;
+}
+.cardContainer img:hover {
+  transform: scale(1.1);
+  box-shadow: 4px 4px 7px black;
+}
+.cardContainer p {
+  text-align: center;
+  color: firebrick;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: cursive;
+  margin-top: 5px;
+}
