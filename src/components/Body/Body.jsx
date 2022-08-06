@@ -16,6 +16,15 @@ function Body(props) {
     setChars(shuffle(chars));
   }, []);
 
+  const scoreHighlighter = () => {
+    setTimeout(() => {
+      document.querySelector(".score").style.color = "lawngreen";
+      setTimeout(() => {
+        document.querySelector(".score").style.color = "maroon";
+      }, 500);
+    });
+  };
+
   const reset = () => {
     setCurrentScore(0);
     setHighScore(0);
@@ -24,10 +33,12 @@ function Body(props) {
 
   const play = (charName) => {
     if (clickedBounty.includes(charName)) {
+      scoreHighlighter();
       reset();
     } else {
       const score = currentScore + 1;
       setCurrentScore(score);
+      scoreHighlighter();
       if (score > highScore) {
         setHighScore(score);
         setClickedBounty([...clickedBounty, charName]);

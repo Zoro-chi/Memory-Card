@@ -31,7 +31,7 @@ const list = [
     img: yamato,
   },
   {
-    name: "Doflamingo",
+    name: "Doffy",
     img: doffy,
   },
   {

@@ -21,8 +21,19 @@
 .cardContainer p {
   text-align: center;
   color: firebrick;
-  font-weight: 700;
+  font-family: courier new;
+  font-weight: 900;
+  font-size: larger;
   text-transform: uppercase;
-  font-family: cursive;
   margin-top: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+  .cardContainer {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+  .cardContainer img {
+    height: 130px;
+  }
 }

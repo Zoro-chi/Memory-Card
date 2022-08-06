@@ -6,3 +6,12 @@
   width: inherit;
   height: inherit;
 }
+
+@media only screen and (max-width: 600px) {
+  .banner {
+    height: inherit;
+  }
+  .banner img {
+    object-fit: contain;
+  }
+}
